@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #0d1117;
+  color: #c9d1d9;
+  padding-bottom: 40px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #161b22;
+  padding: 16px 32px;
+  border-bottom: 1px solid #30363d;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #58a6ff;
+}
+
+.tag {
+  font-size: 0.8rem;
+  background-color: #1f6feb;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  margin-left: 8px;
+}
+
+.repo-badge {
+  color: #8b949e;
+  font-size: 0.9rem;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.card {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.metric-value {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #58a6ff;
+  margin-top: 8px;
+}
+
+.highlight .metric-value {
+  color: #3fb950;
+}
+
+.chart-section h2, .commits-section h2 {
+  margin-bottom: 16px;
+  font-size: 1.2rem;
+  color: #f0f6fc;
+}
+
+.chart-container {
+  position: relative;
+  height: 300px;
+  width: 100%;
+}
+
+.commits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.commit-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  background-color: #0d1117;
+  border-radius: 6px;
+  border-left: 3px solid #58a6ff;
+}
+
+.commit-meta {
+  font-size: 0.85rem;
+  color: #8b949e;
+}

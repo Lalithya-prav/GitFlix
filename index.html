@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GitFlix — Visual Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Chart.js CDN for visual charts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">🎬 GITFLIX <span class="tag">Browser Edition</span></div>
+    <div id="repo-target" class="repo-badge">Loading repo...</div>
+  </header>
+
+  <main class="container">
+    
+    <!-- High-Level Stats Grid -->
+    <section class="stats-grid">
+      <div class="card">
+        <h3>Total Commits</h3>
+        <p id="total-commits" class="metric-value">--</p>
+      </div>
+      <div class="card">
+        <h3>Contributors</h3>
+        <p id="contributors" class="metric-value">--</p>
+      </div>
+      <div class="card">
+        <h3>Project Lifespan</h3>
+        <p id="lifespan" class="metric-value">--</p>
+      </div>
+      <div class="card highlight">
+        <h3>Net Code Growth</h3>
+        <p id="net-lines" class="metric-value">--</p>
+      </div>
+    </section>
+
+    <!-- Main Chart Section -->
+    <section class="chart-section card">
+      <h2>📈 Codebase Growth Over Time</h2>
+      <div class="chart-container">
+        <canvas id="growthChart"></canvas>
+      </div>
+    </section>
+
+    <!-- Commit List Section -->
+    <section class="commits-section card">
+      <h2>📜 Recent Commits</h2>
+      <div id="commits-list" class="commits-list">
+        <!-- Dynamically filled by app.js -->
+      </div>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
