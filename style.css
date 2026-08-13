@@ -105,3 +105,29 @@ body {
   font-size: 0.85rem;
   color: #8b949e;
 }
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.play-button {
+  background-color: #238636;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.play-button:hover {
+  background-color: #2ea043;
+}
+
+.play-button:disabled {
+  background-color: #30363d;
+  cursor: not-allowed;
+}

@@ -1,24 +1,24 @@
 {
   "stats": {
-    "total_commits": 5,
+    "total_commits": 7,
     "unique_contributors": 1,
     "top_author": "lalithya",
-    "top_author_commits": 5,
-    "total_insertions": 346,
-    "total_deletions": 15,
-    "net_lines": 331,
-    "total_files_changed": 10,
+    "top_author_commits": 7,
+    "total_insertions": 732,
+    "total_deletions": 26,
+    "net_lines": 706,
+    "total_files_changed": 15,
     "start_date": "2026-08-12",
-    "latest_date": "2026-08-12",
-    "lifespan_days": 1,
+    "latest_date": "2026-08-13",
+    "lifespan_days": 2,
     "biggest_commit": {
-      "sha": "c133292",
+      "sha": "69cc34f",
       "author": "lalithya",
-      "date": "2026-08-12",
-      "message": "Complete Level 5: Add Replay Repository movie mode feature",
-      "files_changed": 1,
-      "insertions": 84,
-      "deletions": 15
+      "date": "2026-08-13",
+      "message": "Feat: Add initial browser dashboard and growth chart",
+      "files_changed": 3,
+      "insertions": 250,
+      "deletions": 0
     }
   },
   "commits": [
@@ -65,6 +65,24 @@
       "message": "Add .gitignore to exclude __pycache__ and venv",
       "files_changed": 3,
       "insertions": 3,
+      "deletions": 0
+    },
+    {
+      "sha": "aa94aa2",
+      "author": "lalithya",
+      "date": "2026-08-13",
+      "message": "Polish TUI and add JSON data export feature",
+      "files_changed": 2,
+      "insertions": 136,
+      "deletions": 11
+    },
+    {
+      "sha": "69cc34f",
+      "author": "lalithya",
+      "date": "2026-08-13",
+      "message": "Feat: Add initial browser dashboard and growth chart",
+      "files_changed": 3,
+      "insertions": 250,
       "deletions": 0
     }
   ]

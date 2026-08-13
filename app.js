@@ -1,3 +1,6 @@
+let chartInstance = null;
+let animationTimer = null;
+
 async function loadGitFlixData() {
   try {
     const response = await fetch('gitflix_data.json');
@@ -15,9 +18,8 @@ async function loadGitFlixData() {
 
     // 2. Render Recent Commits List
     const commitsListEl = document.getElementById('commits-list');
-    commitsListEl.innerHTML = ''; // clear
+    commitsListEl.innerHTML = '';
 
-    // Show latest 5 commits
     const recentCommits = [...commits].reverse().slice(0, 5);
     recentCommits.forEach(c => {
       const item = document.createElement('div');
@@ -32,8 +34,12 @@ async function loadGitFlixData() {
       commitsListEl.appendChild(item);
     });
 
-    // 3. Render Chart
+    // 3. Render Initial Full Chart
     renderGrowthChart(commits);
+
+    // 4. Attach Replay Listener
+    const playBtn = document.getElementById('play-btn');
+    playBtn.addEventListener('click', () => startReplay(commits));
 
   } catch (err) {
     console.error("Error loading GitFlix data:", err);
@@ -52,7 +58,12 @@ function renderGrowthChart(commits) {
   });
 
   const ctx = document.getElementById('growthChart').getContext('2d');
-  new Chart(ctx, {
+  
+  if (chartInstance) {
+    chartInstance.destroy();
+  }
+
+  chartInstance = new Chart(ctx, {
     type: 'line',
     data: {
       labels: labels,
@@ -79,5 +90,43 @@ function renderGrowthChart(commits) {
   });
 }
 
-// Load data when page opens
+function startReplay(commits) {
+  const playBtn = document.getElementById('play-btn');
+  playBtn.disabled = true;
+  playBtn.textContent = '⏳ Playing...';
+
+  if (animationTimer) clearInterval(animationTimer);
+
+  let step = 0;
+  let cumulativeLines = 0;
+  const labels = [];
+  const lineCounts = [];
+
+  // Reset Chart to empty state
+  chartInstance.data.labels = [];
+  chartInstance.data.datasets[0].data = [];
+  chartInstance.update();
+
+  // Animate frame-by-frame every 600ms
+  animationTimer = setInterval(() => {
+    if (step >= commits.length) {
+      clearInterval(animationTimer);
+      playBtn.disabled = false;
+      playBtn.textContent = '🔄 Replay Again';
+      return;
+    }
+
+    const c = commits[step];
+    cumulativeLines += (c.insertions - c.deletions);
+    labels.push(`Commit #${step + 1}`);
+    lineCounts.push(cumulativeLines);
+
+    chartInstance.data.labels = [...labels];
+    chartInstance.data.datasets[0].data = [...lineCounts];
+    chartInstance.update();
+
+    step++;
+  }, 1200);
+}
+
 document.addEventListener('DOMContentLoaded', loadGitFlixData);
