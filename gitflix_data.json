@@ -1,0 +1,71 @@
+{
+  "stats": {
+    "total_commits": 5,
+    "unique_contributors": 1,
+    "top_author": "lalithya",
+    "top_author_commits": 5,
+    "total_insertions": 346,
+    "total_deletions": 15,
+    "net_lines": 331,
+    "total_files_changed": 10,
+    "start_date": "2026-08-12",
+    "latest_date": "2026-08-12",
+    "lifespan_days": 1,
+    "biggest_commit": {
+      "sha": "c133292",
+      "author": "lalithya",
+      "date": "2026-08-12",
+      "message": "Complete Level 5: Add Replay Repository movie mode feature",
+      "files_changed": 1,
+      "insertions": 84,
+      "deletions": 15
+    }
+  },
+  "commits": [
+    {
+      "sha": "d4c32ba",
+      "author": "lalithya",
+      "date": "2026-08-12",
+      "message": "Initial commit: Add git_parser and setup requirements",
+      "files_changed": 2,
+      "insertions": 95,
+      "deletions": 0
+    },
+    {
+      "sha": "704695a",
+      "author": "lalithya",
+      "date": "2026-08-12",
+      "message": "Complete Level 3: Add stats_calculator script",
+      "files_changed": 2,
+      "insertions": 73,
+      "deletions": 0
+    },
+    {
+      "sha": "3945c29",
+      "author": "lalithya",
+      "date": "2026-08-12",
+      "message": "Complete Level 4: Add Rich main dashboard UI",
+      "files_changed": 2,
+      "insertions": 91,
+      "deletions": 0
+    },
+    {
+      "sha": "c133292",
+      "author": "lalithya",
+      "date": "2026-08-12",
+      "message": "Complete Level 5: Add Replay Repository movie mode feature",
+      "files_changed": 1,
+      "insertions": 84,
+      "deletions": 15
+    },
+    {
+      "sha": "2f80b6c",
+      "author": "lalithya",
+      "date": "2026-08-12",
+      "message": "Add .gitignore to exclude __pycache__ and venv",
+      "files_changed": 3,
+      "insertions": 3,
+      "deletions": 0
+    }
+  ]
+}
